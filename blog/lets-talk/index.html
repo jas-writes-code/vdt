@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>VDT - Let's Talk</title>
+        <meta name="description" content="It's Virgil. I've been busy.">
+        
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="author" content="Virgil">
+    <link rel="icon" type="image/x-icon" href="../../media/favicon.ico">
+    <link rel="stylesheet" href="../../style/style.css">
+  </head>
+  <body>
+  
+  <div class="calzone">
+  <h1><a href="/">Virgil Does Things.</a></h1>
+  <p>Let's Talk.</p>
+  </div>
+  <div class="toast">
+  <p><b>The Concept</b><br><br>
+  Let's Talk is a project I started in March-ish of 2024, and have occasionally updated since then. It's a series of write-ups, usually roughly the length of three max-size discord messages, about something that I've found interesting or worth talking about in the days before I write it.<br><br>
+  The purpose isn't to convince somebody of a certain opinion, or shut down a discussion -- quite the opposite. Let's Talk is created with the intention of starting a discussion on a certain topic, providing a stable basis for anybody reading something to talk about the topic either with me, or with others who might be interested.<br><br>
+  Why did I choose three max-length discord messages as a guideline length? Truth be told, I'm not quite sure why I'm sticking to it, apart from the fact that it seems to work quite well. Six thousand characters is enough to get around a thousand words into each, which is enough to explain a topic or an opinion to a nuance that just isn't available on something like twitter.<br><br>
+  I'm doing this to break free from the restrictions of 280 characters -- around 40 words -- per opinion that Twitter allows you without paying Elon, which simply isn't enough to meaningfully explain what you think about something.</div>
+  <h2><b>Archive</b></h2>
+  <p>Every write-up I create will be archived here. The latest is shown automatically, but you can select any of them to read.</p><br>
+      <select id="fileSelector" onchange="updateContent()">
+        <option value="001.txt">#001: Why do repairs suck now?</option>
+        <option value="002.txt">#002: What does 'real politics' even mean?</option>
+        <option value="003.txt">#003: Why aren't young people politicising?</option>
+        <option value="004.txt">#004: It's not as bad as you fear.</option>
+        <option value="005.txt">#005: What links Adobe's exploitative sub...</option>
+        <option value="006.txt">#006: Why do Apple make the same exact...</option>
+        <option value="007.txt">#007: Would you vote for Hitler?</option>
+        <option value="008.txt">#008: Hamas doesn't exist.</option>
+        <option value="009.txt">#009: The Debrief.</option>
+        <option value="010.txt">#010: Don't Lose Focus.</option>
+        <option value="011.txt">#011: Life is defined in Death.</option>
+      </select>
+  <div class=calzone id=content><p>Retrieving...</p></div>
+  
+  <script>
+        const DEFAULT_FILE = "011.txt";
+        // Load content based on hash or dropdown
+        function updateContent() {
+            const selector = document.getElementById('fileSelector');
+            const selectedFile = selector.value;
+            
+            if (selectedFile) {
+                // Update the URL hash to match the selected file
+                window.location.hash = selectedFile.replace('.txt', '');
+                loadFile(selectedFile);
+            }
+        }
+        
+        // Fetch and display file content
+        function loadFile(fileName) {
+            const contentDiv = document.getElementById('content');
+            
+            if (!fileName) {
+                contentDiv.textContent = "Awaiting selection...";
+                return;
+            }
+            
+            fetch(fileName)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Could not load ${fileName}: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    contentDiv.innerHTML = data;
+                })
+                .catch(error => {
+                    contentDiv.textContent = `Error: ${error.message}`;
+                });
+        }
+        
+        // Handle hash changes
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+            const fileName = hash ? `${hash}.txt` : DEFAULT_FILE;
+            
+            // Set the dropdown to match the current hash or default file
+            const selector = document.getElementById('fileSelector');
+            selector.value = hash ? fileName : DEFAULT_FILE;
+            
+            loadFile(fileName);
+        }
+
+        // Initial load based on hash
+        window.addEventListener('DOMContentLoaded', handleHashChange);
+        // Update content when the hash changes
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+  
+  </body>
+</html>

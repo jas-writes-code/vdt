@@ -1,0 +1,64 @@
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /music-of-morale/
+Disallow: /quotes/
+
+User-agent: Wayback Machine
+Disallow: /music-of-morale/
+Disallow: /code/
+Disallow: /quotes/
+
+# Any other services that I probably forgot to cover here
+User-agent: *
+Disallow: /quotes/
+Disallow: /music-of-morale/
+Allow: /style/
+Allow: /media/
+
+# Does anyone even still use Yahoo?
+User-agent: Slurp
+Disallow: /music-of-morale/
+Disallow: /quotes/
+
+# Yandex? The not-at-all shady russian search engine?
+User-agent: Yandex
+Disallow:/*
+
+# Apparently MSN's bot and Bingbot aren't the same thing. I don't get it.
+User-agent: msnbot
+Disallow: /music-of-morale/
+Disallow: /quotes/
+
+# Common Crawl's crawler
+User-agent: CCBot
+Disallow: /*
+
+# SentiBot's crawler
+User-agent: sentibot
+Disallow: /*
+
+# Google Bard's crawler
+User-agent: Google-Extended
+Disallow: /*
+
+# Facebook's crawler
+User-agent: FacebookBot
+Disallow: /*
+
+# webz.io's crawler
+User-agent: omgili
+Disallow: /*
+
+# webz.io's crawler
+User-agent: omgilibot
+Disallow: /*
+
+# Amazon's crawler
+User-agent: Amazonbot
+Disallow: /*
+
+# Bing's crawler
+User-agent: Bingbot
+Disallow: /*

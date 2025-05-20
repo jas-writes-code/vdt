@@ -1,0 +1,51 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" type="image/x-icon" href="../media/favicon.ico">
+    <title>VDT - Code</title>
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color:#ffffff;
+        }
+  .video-container {
+  position: relative;
+  max-width: 500em;
+  padding-bottom: 56.25%; /* for the 16:9 aspect ratio */
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<body>
+<div id="code" align = center>
+</div>
+</body>
+
+<script>
+let n = Math.floor((Math.random() * 3) + 1)
+console.log(n)
+var theGame = "<p> You just lost <a href = https://en.wikipedia.org/wiki/The_Game_(mind_game)#Gameplay> The Game</a>!</p>"
+var astley = '<div class="video-container"><video loop="" poster="img/still.jpg" id="bgvid" autoplay muted> <source src="../media/vid.mp4" type="video/mp4" /> </video></div>'
+var gnomed = '<div class="video-container"><video loop="" poster="img/still.jpg" id="bgvid" autoplay muted> <source src="../media/gnomed.mp4" type="video/mp4" /> </video></div>'
+if(n == 3) {
+  document.getElementById("code").innerHTML= theGame
+} else if(n == 2) {
+  document.getElementById("code").innerHTML= astley
+} else {
+  document.getElementById("code").innerHTML= gnomed
+  }
+</script>
+
+</html>

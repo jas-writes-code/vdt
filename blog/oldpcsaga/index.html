@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>VDT - Old PC Saga</title>
+        <meta name="description" content="It's Virgil. I've been busy.">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+    <meta name="author" content="Virgil">
+    <link rel="icon" type="image/x-icon" href="../../media/favicon.ico">
+    <link rel="stylesheet" href="../../style/style.css">
+    
+  </head>
+    <div class="toast"> 
+          
+          <h1><a href="/">Virgil Does Things.</a></h1>
+          <p>A story about old PC's, selfhosting and Discord bots.</p>
+          
+    </div>
+    <br> This is going to take a while to write, and I've been procrastinating it for even longer. Ironic, since it only gets longer as I work on more stuff, but I suppose that's life.
+    <br><br>
+    <div class="calzone">
+    
+    <br>TL;DR: Eighteen months, one burnt PC and two old thinkpads later, I have learnt basic CSS and system administration. I'm certain there are more efficient ways to learn this, but this is fun.<br><br>
+    
+    </div>
+    <h2>Part 1: The Restoration</h2>
+    <p>Our story begins in late 2022, where I remember a PC tower from circa 2007 is in my basement and decide to get it out and see what's on the disk. <i>Gesagt getan,</i> the tower in question was in pieces in my bedroom and the drive plugged into my own (and far more modern) PC to see if there was anything interesting on it. There wasn't, really, but it did get me thinking.<br><br>
+    I downloaded a copy of <a href="https://antixlinux.com/">AntiX</a> onto a USB and got to work, running a few tests on a VM before plugging it into the PC and starting it up. Or, I would have done, if the PSU wasn't fried from daily abuse for a few years followed by further years of abandonment. This was, to say the least, a roadblock. The PC's motherboard also did not support normal-sized PSU cables, which made matters even more fun: It was, of course, a proprietary <i>Slimline</i> connector. It's safe to say this was another log on the fire that is my burning hatred of proprietary tech.<br><br>
+    Faced with this dilemma, I did the most reasonable thing a person could do: I ordered a new, low-wattage PSU and an adapter cable, which was absolutely not sketchy at all. No, it didn't burn out when I first tested it because for <i>some fucking reason</i> there are multiple types of slimline ports, and I didn't have to order a completely different adapter so the PC tower would even boot in the first place. It did boot, eventually, so the next thing to do was to install AntiX and familiarise myself with Linux and terminal-based computing. Compared to other things, though, I think that was rather easy to learn.<br><br>
+    As soon as that was set up, the next steps were to set up SSH (and by extension, SFTP) so I could access it remotely, and a Discord bot so I could test it. The Discord bot in question runs off of code I "borrowed" from a now-deleted Github repository a very long time ago, and is still running to this day. The following few weeks and months would be spent in port forwarding, as well as trying to install SSL certificates so I could host the very website you are looking at now on this machine. (foreshadowing?) This would include a few attempts to run Certbot -- AntiX doesn't support Snapd, which made the process rather interesting -- and shortly after that was sorted, a number of hours on <a href="https://merlin.virgildoesthings.com">Neocities</a> to test the site before transferring everything to the newly named <b>vdt-horizon</b> to be hosted on there. I also set up Owncloud, which would, were it not for the amount of online guides detailing the painstaking process of setting up Owncloud, be worth its own chapter. But alas.
+    <br><br>I'd also start working on the Quotes, which anyone who knows me IRL is probably familiar with. This setup would last all the way up until early 2022, when the old PC I'm running this on would take its final breaths. This happened, with the highest level of irony, while I was away from home for weeks with no hopes of being back to turn it on. Of course.<br><br>
+    <h2>Part 2: The Burnout</h2>
+    I imagine you expected this to be about my mental health, but it is instead about the health of vdt-horizon.<br><br>
+    You see, a computer that was replaced many years ago for being unreliable was never going to be perfectly reliable, a fact I soon found out when it began to shut itself down every few weeks for what was to me, no apparent reason. Perhaps it was the strain put on it from hosting even the most lightweight of websites. Either way, while I was in the UK for a number of weeks, vdt-horizon's fans would spin for the last time. I'd return home and try in vain to resurrect it, before eventually pulling out the hard drive and putting the rest of the tower into the <i>Electroschrott</i> bin, as it was going to be little use to anyone now.<br><br>
+    My search would begin fairly soon for an affordable replacement, a search that would eventually lead me to an interesting Ricardo offer -- two old thinkpads from circa 2007-2009, both with little usage apart from the sorry state of their respective batteries. That's fine, I won't be needing the battery anyways so I'll just remove it.</p>
+
+    <div class="antitoast">
+        
+          <p class="minor">Credits to <a href="https://www.tomscott.com">Tom Scott</a> and others for getting me into this sort of thing. I don't know why I spend so long on it, but I guess it's fun.</p>
+        
+    </div>
+</html>
